@@ -85,6 +85,107 @@ const imageGallery = [
 
 /*************************** 2. MODELL -> VIEW *******************************/
 
+function insertGallery() {
+   const galleryContentContainer = document.querySelector(".gallery__content-container");
+   const GalleryScrollLength = document.querySelector(".scroll-length__content");
+
+   imageGallery.forEach(work => {
+
+      /* create */
+      const artwork = document.createElement("div");
+      const figure = document.createElement("figure");
+      const information = document.createElement("div");
+      const scrollLength = document.createElement("div");
+
+      /* figure */
+      function insertFigureElements() {
+
+         /* create */
+         const img = document.createElement("img");
+         const figCaption = document.createElement("figcaption");
+
+         /* name */
+         img.classname = "artwork__img";
+         figCaption.className = "artwork__figcaption";
+
+         /* value */
+         img.src = work.figure.url;
+         img.alt = work.figure.alt;
+         figCaption.innerText = work.figure.figCaption;
+
+         /* append */
+         figure.appendChild(img);
+         figure.appendChild(figCaption);
+      }
+
+      insertFigureElements()
+
+      /* information */
+      function insertInformationElements() {
+
+         /* create */
+         const title = document.createElement("div");
+         const details = document.createElement("div");
+
+         function insertDetailsElements() {
+
+            /* create */
+            const date = document.createElement("div");
+            const description = document.createElement("div");
+
+            /* name */
+            date.className = "artwork__date";
+            description.className = "artwork__description";
+
+            /* value */
+            date.innerText = work.date;
+            description.innerText = work.description;
+
+            /* append */
+            details.appendChild(date);
+            details.appendChild(description);
+         }
+
+         insertDetailsElements()
+
+         /* name */
+         title.className = "artwork__title";
+         details.className = "artwork__details";
+
+         /* value */
+         title.innerText = work.title;
+
+         /* append */
+         information.appendChild(title);
+         information.appendChild(details);
+      }
+
+      insertInformationElements()
+
+      /* name */
+      artwork.className = "artwork";
+      figure.className = "artwork__figure";
+      information.className = "artwork__information";
+      scrollLength.className = "scroll-length__block";
+
+      /* append */
+      artwork.appendChild(figure);
+      artwork.appendChild(information);
+      galleryContentContainer.appendChild(artwork);
+      GalleryScrollLength.appendChild(scrollLength);
+   })
+
+   /* create */
+   const finalScroll = document.createElement("div");
+
+   /* name */
+   finalScroll.className = "gallery__final-scroll";
+
+   /* append*/
+   galleryContentContainer.appendChild(finalScroll);
+}
+
+insertGallery()
 
 
 

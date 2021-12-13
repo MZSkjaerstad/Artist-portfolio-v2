@@ -67,34 +67,34 @@ body {
    justify-content: space-between;
 }
 
-.landingpage__brand__logo {
+.landingpage__logo {
    width: auto;
    height: 20vh;
 }
-.landingpage__brand__logo img {
+.landingpage__logo img {
    width: auto;
    height: 100%;
 }
 
-.landingpage__brand__undertext {
+.landingpage__undertext {
    font-size: 15px;
    letter-spacing: 3px;
    text-transform: uppercase;
    font-weight: bold;
 }
 
-.landingpage__brand__scroll-icon {
+.landingpage__scroll-icon {
    width: auto;
    height: 7vh;
    text-align: center;
 }
 
-.landingpage__brand__scroll-icon img {
+.landingpage__scroll-icon img {
    width: auto;
    height: 100%;
 }
 
-.landingpage__brand__scroll-icon__text {
+.scroll-icon__text {
    font-size: 12px;
    text-transform: uppercase;
    margin-top: 1vh;
@@ -108,6 +108,14 @@ body {
    width: 100vw;
    height: auto;
    position: relative;
+}
+
+.scroll-length__block:last-child {
+   height: 20vw;
+}
+
+.scroll-length__block {
+   height: 100vw;
 }
 
 /* 2.3 Content container */
@@ -125,12 +133,27 @@ body {
    overflow-y: hidden;
 }
 
+.gallery__initial-scroll {
+   flex: 0 0 auto;
+   width: 100vh;
+}
+
+.gallery__thumbnail {
+}
+
+.gallery__final-scroll {
+   flex: 0 0 auto;
+   width: 20vw;
+}
+
 /* 2.4 artwork */
 
 .artwork {
    width: 100vw;
    height: 100vh;
-   padding: 0vw 0vw 0vw 20vw;
+   padding-left: 20vw;
+   padding-top: 4vh;
+   padding-bottom: 2vh;
    display: flex;
    flex-direction: column;
    justify-content: space-evenly;
@@ -139,15 +162,15 @@ body {
 
 .artwork__figure {
    width: 100%;
-   height: 80%;
+   height: 60vw;
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
    overflow: hidden;
 }
-.artwork__figure img {
-   width: 100%;
-   height: auto;
+.artwork__img {
+   width: auto;
+   height: 100%;
 }
 
 .artwork__figcaption {
@@ -155,9 +178,8 @@ body {
 }
 
 .artwork__information {
-   padding: 2vh;
+   padding: 2vh 0vh 2vh 0vh;
    display: flex;
-   justify-content: space-evenly;
    align-items: flex-start;
 }
 
@@ -169,7 +191,7 @@ body {
 }
 
 .artwork__details {
-   width: 55%;
+   width: 34.3%;
    padding-top: 0.8em;
 }
 
@@ -265,19 +287,23 @@ body {
 
 /*************************** MEDIA QUERIES *************************/
 
-/* bigger PC */
-@media screen and (min-width: 2500px) {
-}
+/* Mobile & lesser screens */
 
-/* pad */
-@media screen and (max-width: 965px) {
-   .artwork__figure {
-      height: 80%;
+@media screen and (max-width: 1090px) {
+   .artwork {
+      padding-left: 10vw;
+      justify-content: center;
+      align-items: flex-start;
+   }
+
+   .gallery__final-scroll {
+      width: 10vw;
    }
 
    .artwork__information {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
    }
 
    .artwork__title {
@@ -286,10 +312,6 @@ body {
    }
 
    .artwork__details {
-      width: 100%;
+      width: 80%;
    }
-}
-
-/* mobile */
-@media screen and (max-width: 700px) {
 }
