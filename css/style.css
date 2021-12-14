@@ -32,14 +32,47 @@ body {
    justify-content: space-between;
 }
 
-.landingpage__nav div {
-   width: 5vw;
+.landingpage__burger {
+   display: none;
+   position: relative;
+}
+
+.landingpage__burger-icon {
+   margin-top: 1.5rem;
+   z-index: 12;
+}
+
+.landingpage__burger-icon:hover rect {
+   fill: #fd372a;
+}
+
+.landingpage__burger-menu {
+   background: #000000dd;
+   width: 75vw;
+   height: 80vh;
+   position: absolute;
+   display: none;
+   align-items: center;
+   z-index: 10;
+}
+
+.landingpage__burger-menu--expanded {
+   display: inline-block;
+   padding-top: 1.5rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+.landingpage__link {
+   width: 25rem;
    height: 2vw;
    display: flex;
    justify-content: center;
 }
 
-.landingpage__nav div a {
+.landingpage__link a {
    color: white;
    text-transform: uppercase;
    font-weight: bold;
@@ -51,7 +84,7 @@ body {
    cursor: pointer;
 }
 
-.landingpage__nav div a:hover {
+.landingpage__link a:hover {
    font-size: 1em;
    color: #fd372a;
 }
@@ -139,6 +172,15 @@ body {
 }
 
 .gallery__thumbnail {
+   width: 100%;
+   padding-top: 5vh;
+   font-weight: bold;
+   font-size: 1rem;
+   text-transform: uppercase;
+   text-align: right;
+   letter-spacing: 0.15rem;
+   display: flex;
+   justify-content: right;
 }
 
 .gallery__final-scroll {
@@ -152,7 +194,7 @@ body {
    width: 100vw;
    height: 100vh;
    padding-left: 20vw;
-   padding-top: 4vh;
+   padding-top: 5vh;
    padding-bottom: 2vh;
    display: flex;
    flex-direction: column;
@@ -243,12 +285,12 @@ body {
 }
 
 .footer__socials div {
-   width: 6vw;
+   width: 6rem;
    height: auto;
    text-align: center;
 }
 
-.footer__socials div a {
+.footer__link a {
    color: black;
    font-size: 0.8em;
    text-align: center;
@@ -289,7 +331,7 @@ body {
 
 /* Mobile & lesser screens */
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 1175px) {
    .artwork {
       padding-left: 10vw;
       justify-content: center;
@@ -313,5 +355,26 @@ body {
 
    .artwork__details {
       width: 80%;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .landingpage__nav {
+      display: none;
+   }
+
+   .landingpage__burger {
+      display: inline-block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .landingpage__link a {
+      font-size: 0.9rem;
+   }
+
+   .landingpage__link a:hover {
+      font-size: 1.2rem;
    }
 }

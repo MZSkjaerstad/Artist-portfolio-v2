@@ -205,7 +205,25 @@ function galleryContainerScroll() {
 
 
 
-/************************* 4. GLOBAL EVENT-LISTENERS *****************************/
+/************************* 4. TOGGLE MOBILE BURGER-MENU *****************************/
+
+function toggleBurgerMenu() {
+   const burgerIcon = document.querySelector(".landingpage__burger-icon");
+   const burgerMenu = document.querySelector(".landingpage__burger-menu");
+
+   burgerIcon.addEventListener("click", () => {
+      burgerMenu.classList.toggle("landingpage__burger-menu--expanded")
+   });
+};
+
+toggleBurgerMenu()
+
+
+
+
+
+
+/************************* 5. GLOBAL EVENT-LISTENERS *****************************/
 
 let lastKnownPosition = 0;
 let ticking = false;
